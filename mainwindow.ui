@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <stylestrategy>PreferAntialias</stylestrategy>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Mot</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::MinimumExpanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <stylestrategy>PreferAntialias</stylestrategy>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::MinimumExpanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QFontComboBox" name="fontComboBox"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox">
+      <property name="value">
+       <number>11</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_shearch">
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="horizontalSlider">
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="minimum">
+       <number>256</number>
+      </property>
+      <property name="maximum">
+       <number>3000</number>
+      </property>
+      <property name="sliderPosition">
+       <number>256</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Rechercher</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionNouveau"/>
+    <addaction name="actionOuvrir"/>
+    <addaction name="separator"/>
+    <addaction name="actionEnregistrer"/>
+    <addaction name="actionEnregistrer_sous"/>
+    <addaction name="separator"/>
+    <addaction name="actionImprimer"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menuBarreOutils">
+    <property name="title">
+     <string>Barres d'outils</string>
+    </property>
+    <addaction name="actionPolice"/>
+    <addaction name="actionCouleur_et_Alignement"/>
+   </widget>
+   <widget class="QMenu" name="menuAide">
+    <property name="title">
+     <string>À propos</string>
+    </property>
+    <addaction name="actionA_propos"/>
+    <addaction name="action_propos_de_Qt"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuBarreOutils"/>
+   <addaction name="menuAide"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar_police">
+   <property name="windowTitle">
+    <string>Police</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionGras"/>
+   <addaction name="actionItalique"/>
+   <addaction name="actionSouligner"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_couleurEtAlignement">
+   <property name="windowTitle">
+    <string>Gestion du texte</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCouleur"/>
+   <addaction name="actionSurlignage"/>
+   <addaction name="actionImage"/>
+   <addaction name="separator"/>
+   <addaction name="actionAlignerAGauche"/>
+   <addaction name="actionAlignerAuCentre"/>
+   <addaction name="actionAlignerADroite"/>
+   <addaction name="actionJustifier"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionNouveau">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/new-file_40454.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/new-file_40454.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nouveau</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Créer un nouveau fichier (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + N&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOuvrir">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/Open-folder-add_36742.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/Open-folder-add_36742.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ouvrir</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ouvrir un fichier existant (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + O&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionEnregistrer">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/Save_37110.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/Save_37110.png</iconset>
+   </property>
+   <property name="text">
+    <string>Enregistrer</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enregistrer le fichier courant (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + S&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionEnregistrer_sous">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/Save-as_37111.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/Save-as_37111.png</iconset>
+   </property>
+   <property name="text">
+    <string>Enregistrer sous</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enregistrer sous (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + MAJ + S&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionImprimer">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/3592862-general-inkjet-printer-office-paper-printer-print-printer-scanner_107733.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/3592862-general-inkjet-printer-office-paper-printer-print-printer-scanner_107733.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimer</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Imprimer le fichier courant (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + P&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/close_14776.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/close_14776.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionPolice">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/visible.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/visible.png</iconset>
+   </property>
+   <property name="text">
+    <string>Police</string>
+   </property>
+  </action>
+  <action name="actionCouleur_et_Alignement">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/visible.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/visible.png</iconset>
+   </property>
+   <property name="text">
+    <string>Gestion du texte</string>
+   </property>
+  </action>
+  <action name="actionCouleur">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/RGB_Circle_1-80_icon-icons.com_57282.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/RGB_Circle_1-80_icon-icons.com_57282.png</iconset>
+   </property>
+   <property name="text">
+    <string>Couleur</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Changer la couleur du texte&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionSurlignage">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/highlighter_yellow_15057.ico</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/highlighter_yellow_15057.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Surlignage</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Changer la couleur de surlignage du texte&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionAlignerAGauche">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_align_left_128_28362.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_align_left_128_28362.png</iconset>
+   </property>
+   <property name="text">
+    <string>AlignerAGauche</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aligner le texte à gauche (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + L&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionAlignerAuCentre">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_align_center_128_28364.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_align_center_128_28364.png</iconset>
+   </property>
+   <property name="text">
+    <string>AlignerAuCentre</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aligner le texte au centre (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + E&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionAlignerADroite">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_align_right_128_28361.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_align_right_128_28361.png</iconset>
+   </property>
+   <property name="text">
+    <string>AlignerADroite</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aligner le texte à droite (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + R&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionJustifier">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_align_justify_128_28363.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_align_justify_128_28363.png</iconset>
+   </property>
+   <property name="text">
+    <string>Justifier</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Justifier le texte (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + J&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+J</string>
+   </property>
+  </action>
+  <action name="actionGras">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_bold_128_28360.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_bold_128_28360.png</iconset>
+   </property>
+   <property name="text">
+    <string>Gras</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mettre le texte en gras (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + B&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionItalique">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_italic_128_28353.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_italic_128_28353.png</iconset>
+   </property>
+   <property name="text">
+    <string>Italique</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mettre le texte en Italique (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + I&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionSouligner">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_underline_128_28343.png</normaloff>../build-Mot-Desktop_Qt_5_15_0_MinGW_64_bit-Debug/debug/icons/ic_format_underline_128_28343.png</iconset>
+   </property>
+   <property name="text">
+    <string>Souligner</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Souligner le texte (&lt;span style=&quot; text-decoration: underline;&quot;&gt;CTRL + U&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionImage">
+   <property name="text">
+    <string>Image</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Insérer une image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionA_propos">
+   <property name="text">
+    <string>À propos</string>
+   </property>
+  </action>
+  <action name="action_propos_de_Qt">
+   <property name="text">
+    <string>À propos de Qt</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
