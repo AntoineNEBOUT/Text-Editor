@@ -1,2 +1,4 @@
 # Text-Editor
-It's a C++ text editor called "Mot". I created it for my own use, as well as to practice programming in C++ and using Qt.
+<b>Description :</b> <br>
+Il s'agit d'un éditeur de texte appelé "Mot".<br>
+Je l'ai  crée pour mon usage personnel ainsi que pour m'exercer à la programmation en C++ et à l'usage de Qt.
